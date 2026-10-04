@@ -1,1 +1,15 @@
+@import url("https://googleapis.com");
 @import "tailwindcss";
+
+@theme {
+  /* Brew & bean Color Scheme */
+  --color-expresso: #3e2723;
+  --color-cream: #f7f3ed;
+  --color-light-coffee: #d7b899;
+  --color-caramel: #b86b3a;
+  --color-dark-brown: #241a17;
+  --color-white: #ffffff;
+
+  --font-lora: "Lora, serif";
+  --font-inter: "Inter", sans-serif;
+}
