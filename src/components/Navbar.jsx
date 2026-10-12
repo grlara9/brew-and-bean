@@ -16,7 +16,7 @@ function Navigation() {
   }, [isOpen]);
 
   return (
-    <nav className="flex justify-around items-center h-[16vh] w-full bg-expresso font-lora text-cream relative">
+    <nav className="flex justify-around items-center h-[10vh] w-full bg-expresso font-lora text-cream relative">
       <div className="font-bold">
         <a href="/home">Brew & Beans</a>
       </div>
