@@ -15,13 +15,15 @@ function Menu() {
   return (
     <>
       <Navigation />
-      <main>
-        <div style={{ padding: "20px", fontFamily: "sans-serif" }}>
-          <h1>Our Menu</h1>
+      <main className="p-4">
+        <div className="font-inter">
+          <h1 className="text-5xl text-expresso font-bold font-lora leading-tight">
+            Our Menu
+          </h1>
 
-          {/* 3. Filter Navigation Menu */}
-          <nav style={{ marginBottom: "20px", display: "flex", gap: "10px" }}>
+          <nav className="flex justify-around text-black">
             <button
+              className="cursor-pointer hover:text-light-coffee"
               onClick={() => setCategoryFilter("all")}
               style={{
                 fontWeight: categoryFilter === "all" ? "bold" : "normal",
@@ -30,6 +32,7 @@ function Menu() {
               All
             </button>
             <button
+              className="cursor-pointer hover:text-light-coffee"
               onClick={() => setCategoryFilter("Iced Drinks")}
               style={{
                 fontWeight: categoryFilter === "cold" ? "bold" : "normal",
@@ -38,6 +41,7 @@ function Menu() {
               Cold Drinks
             </button>
             <button
+              className="cursor-pointer hover:text-light-coffee"
               onClick={() => setCategoryFilter("Hot Drinks")}
               style={{
                 fontWeight: categoryFilter === "hot" ? "bold" : "normal",
@@ -46,6 +50,7 @@ function Menu() {
               Hot Drinks
             </button>
             <button
+              className="cursor-pointer hover:text-light-coffee"
               onClick={() => setCategoryFilter("Tea & Wellness")}
               style={{
                 fontWeight: categoryFilter === "tea" ? "bold" : "normal",
@@ -54,6 +59,7 @@ function Menu() {
               Teas
             </button>
             <button
+              className="cursor-pointer hover:text-light-coffee"
               onClick={() => setCategoryFilter("Pastries")}
               style={{
                 fontWeight: categoryFilter === "Pastries" ? "bold" : "normal",
@@ -62,6 +68,7 @@ function Menu() {
               Pastries
             </button>
             <button
+              className="cursor-pointer hover:text-light-coffee"
               onClick={() => setCategoryFilter("Breakfast")}
               style={{
                 fontWeight: categoryFilter === "Breakfast" ? "bold" : "normal",
@@ -70,6 +77,7 @@ function Menu() {
               Breakfast
             </button>
             <button
+              className="cursor-pointer hover:text-light-coffee"
               onClick={() => setCategoryFilter("Sandwiches & Wraps")}
               style={{
                 fontWeight:
@@ -79,6 +87,7 @@ function Menu() {
               Sandwiches & Wraps
             </button>
             <button
+              className="cursor-pointer hover:text-light-coffee"
               onClick={() => setCategoryFilter("Sweets")}
               style={{
                 fontWeight: categoryFilter === "Sweets" ? "bold" : "normal",
@@ -89,16 +98,19 @@ function Menu() {
           </nav>
 
           {/* 4. Display the filtered results */}
-          <h3>Results: ({filteredOption.length})</h3>
-          {filteredOption.map((drink) => (
-            <FeaturedDrinks
-              key={drink.id}
-              name={drink.name}
-              category={drink.category}
-              image={drink.image}
-              price={drink.price}
-            />
-          ))}
+          <h3 className="pt-2">Results: ({filteredOption.length})</h3>
+          <div className="grid grid-cols-4 gap-4">
+            {filteredOption.map((drink) => (
+              <FeaturedDrinks
+                key={drink.id}
+                name={drink.name}
+                category={drink.category}
+                description={drink.description}
+                image={drink.image}
+                price={drink.price}
+              />
+            ))}
+          </div>
         </div>
       </main>
       <Footer />
