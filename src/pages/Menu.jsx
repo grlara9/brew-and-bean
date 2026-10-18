@@ -21,9 +21,9 @@ function Menu() {
             Our Menu
           </h1>
 
-          <nav className="flex justify-around text-black">
+          <nav className="flex flex-col items-start justify-start text-black text-lg md:flex-row md:items-center">
             <button
-              className="cursor-pointer hover:text-light-coffee"
+              className="pr-5 cursor-pointer hover:text-light-coffee"
               onClick={() => setCategoryFilter("all")}
               style={{
                 fontWeight: categoryFilter === "all" ? "bold" : "normal",
@@ -32,7 +32,7 @@ function Menu() {
               All
             </button>
             <button
-              className="cursor-pointer hover:text-light-coffee"
+              className="pr-5 cursor-pointer hover:text-light-coffee"
               onClick={() => setCategoryFilter("Iced Drinks")}
               style={{
                 fontWeight: categoryFilter === "cold" ? "bold" : "normal",
@@ -41,7 +41,7 @@ function Menu() {
               Cold Drinks
             </button>
             <button
-              className="cursor-pointer hover:text-light-coffee"
+              className="pr-5 cursor-pointer hover:text-light-coffee"
               onClick={() => setCategoryFilter("Hot Drinks")}
               style={{
                 fontWeight: categoryFilter === "hot" ? "bold" : "normal",
@@ -50,7 +50,7 @@ function Menu() {
               Hot Drinks
             </button>
             <button
-              className="cursor-pointer hover:text-light-coffee"
+              className="pr-5 cursor-pointer hover:text-light-coffee"
               onClick={() => setCategoryFilter("Tea & Wellness")}
               style={{
                 fontWeight: categoryFilter === "tea" ? "bold" : "normal",
@@ -59,7 +59,7 @@ function Menu() {
               Teas
             </button>
             <button
-              className="cursor-pointer hover:text-light-coffee"
+              className="pr-5 cursor-pointer hover:text-light-coffee"
               onClick={() => setCategoryFilter("Pastries")}
               style={{
                 fontWeight: categoryFilter === "Pastries" ? "bold" : "normal",
@@ -68,7 +68,7 @@ function Menu() {
               Pastries
             </button>
             <button
-              className="cursor-pointer hover:text-light-coffee"
+              className="pr-5 cursor-pointer hover:text-light-coffee"
               onClick={() => setCategoryFilter("Breakfast")}
               style={{
                 fontWeight: categoryFilter === "Breakfast" ? "bold" : "normal",
@@ -77,7 +77,7 @@ function Menu() {
               Breakfast
             </button>
             <button
-              className="cursor-pointer hover:text-light-coffee"
+              className="pr-5 cursor-pointer hover:text-light-coffee"
               onClick={() => setCategoryFilter("Sandwiches & Wraps")}
               style={{
                 fontWeight:
@@ -87,7 +87,7 @@ function Menu() {
               Sandwiches & Wraps
             </button>
             <button
-              className="cursor-pointer hover:text-light-coffee"
+              className="pr-5 cursor-pointer hover:text-light-coffee"
               onClick={() => setCategoryFilter("Sweets")}
               style={{
                 fontWeight: categoryFilter === "Sweets" ? "bold" : "normal",
@@ -99,7 +99,7 @@ function Menu() {
 
           {/* 4. Display the filtered results */}
           <h3 className="pt-2">Results: ({filteredOption.length})</h3>
-          <div className="grid grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {filteredOption.map((drink) => (
               <FeaturedDrinks
                 key={drink.id}
