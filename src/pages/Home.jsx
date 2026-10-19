@@ -9,6 +9,11 @@ function Home() {
   return (
     <>
       <Hero />
+      <div>
+        <h1 className="text-5xl text-expresso font-bold font-lora leading-tight">
+          Our Menu
+        </h1>
+      </div>
       <div className="grid grid-cols-4 gap-4">
         {items.map((item) => (
           <FeaturedDrinks
