@@ -17,8 +17,8 @@ function Navigation() {
 
   return (
     <nav className="flex justify-around items-center h-[10vh] w-full bg-expresso font-lora text-cream relative">
-      <div className="font-bold">
-        <a href="/home">Brew & Beans</a>
+      <div className="font-bold text-xl font-cursive">
+        <a href="/home">Brew & Beans Coffee</a>
       </div>
       <ul className="hidden flex gap-2 md:flex space-x-6">
         <li className="hover:text-light-coffee">Home</li>

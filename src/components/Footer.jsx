@@ -3,7 +3,7 @@ function Footer() {
     <footer>
       <div className="bg-cream px-6 py-10 md:py-14">
         <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 md:flex-row">
-          <h2 className="font-lora text-3xl font-bold text-expresso">
+          <h2 className="font-belleza text-3xl font-bold text-expresso">
             Brew & Bean
           </h2>
           <a
