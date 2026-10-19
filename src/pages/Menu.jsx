@@ -1,7 +1,5 @@
-import Navigation from "../components/Navbar";
 import Hero from "../components/Hero";
 import FeaturedDrinks from "../components/FeaturedDrinks.jsx";
-import Footer from "../components/Footer";
 import menuItems from "../data/menu.js";
 import { useState } from "react";
 
@@ -14,7 +12,6 @@ function Menu() {
 
   return (
     <>
-      <Navigation />
       <main className="p-4">
         <div className="font-inter">
           <h1 className="text-5xl text-expresso font-bold font-lora leading-tight">
@@ -113,7 +110,6 @@ function Menu() {
           </div>
         </div>
       </main>
-      <Footer />
     </>
   );
 }
