@@ -16,7 +16,7 @@ function Checkout() {
           <div>
             <label
               className="font-inter text-sm font-bold text-expresso"
-              for="full-name"
+              htmlFor="full-name"
             >
               Full Name
             </label>
@@ -33,7 +33,7 @@ function Checkout() {
           <div>
             <label
               className="font-inter text-sm font-bold text-expresso"
-              for="user-email"
+              htmlFor="user-email"
             >
               Email Address
             </label>
@@ -57,7 +57,7 @@ function Checkout() {
           <div>
             <label
               className="font-inter text-sm font-bold text-expresso"
-              for="address"
+              htmlFor="address"
             >
               Address Line 1
             </label>
@@ -73,7 +73,7 @@ function Checkout() {
           <div>
             <label
               className="font-inter text-sm font-bold text-expresso"
-              for="city"
+              htmlFor="city"
             >
               City
             </label>
@@ -90,7 +90,7 @@ function Checkout() {
             <div>
               <label
                 className="font-inter text-sm font-bold text-expresso"
-                for="state-name"
+                htmlFor="state-name"
               >
                 State
               </label>
@@ -106,7 +106,7 @@ function Checkout() {
             <div>
               <label
                 className="font-inter text-sm font-bold text-expresso"
-                for="zip-code"
+                htmlFor="zip-code"
               >
                 ZIP Code
               </label>
@@ -131,7 +131,7 @@ function Checkout() {
                 name="credit-debit"
                 value="credit_card"
               />
-              <label className="ml-2 text-sm" for="credit-debit">
+              <label className="ml-2 text-sm" htmlFor="credit-debit">
                 Credit/ Debit Card
               </label>
             </div>
@@ -143,7 +143,7 @@ function Checkout() {
                 name="apple_pay"
                 value="apple_value"
               />
-              <label className="ml-2 text-sm" for="apple">
+              <label className="ml-2 text-sm" htmlFor="apple">
                 Apple Pay
               </label>
             </div>
