@@ -83,7 +83,7 @@ function Checkout() {
               required
             />
           </div>
-          <div className="flex flex-col gap-2">
+          <div className="grid grid-cols-1 gap-2 md:grid-cols-2">
             <div>
               <label
                 className="font-inter text-sm font-bold text-expresso"
