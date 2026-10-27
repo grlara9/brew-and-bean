@@ -2,7 +2,7 @@ function Checkout() {
   return (
     <main className="w-full h-auto mx-auto px-4 py-4">
       <div className="mb-8">
-        <h1 className="text-4xl text-expresso font-bold font-lora leading-tight md:text-5xl">
+        <h1 className="text-xl text-expresso font-bold font-lora leading-tight md:text-2xl">
           Checkout
         </h1>
         <form
@@ -10,7 +10,7 @@ function Checkout() {
           method="POST"
           className="overflow-x-auto bg-white shadow-sm"
         >
-          <h2 className="text-xl text-expresso font-bold font-lora leading-tight md:text-5xl">
+          <h2 className="text-xl text-expresso font-bold font-lora leading-tight md:text-2xl">
             Contact Information
           </h2>
           <div>
@@ -47,7 +47,7 @@ function Checkout() {
             />
           </div>
 
-          <h2 className="text-xl text-expresso font-bold font-lora leading-tight md:text-5xl">
+          <h2 className="text-xl text-expresso font-bold font-lora leading-tight md:text-2xl">
             Shipping Address
           </h2>
 
@@ -83,7 +83,7 @@ function Checkout() {
               required
             />
           </div>
-          <div className="flex flex-cols gap-2">
+          <div className="flex flex-col gap-2">
             <div>
               <label
                 className="font-inter text-sm font-bold text-expresso"
@@ -118,7 +118,7 @@ function Checkout() {
             </div>
           </div>
           <div>
-            <h2 className="text-xl text-expresso font-bold font-lora leading-tight mt-4 md:text-5xl">
+            <h2 className="text-xl text-expresso font-bold font-lora leading-tight mt-4 md:text-2xl">
               Payment Method
             </h2>
             <div>
