@@ -2,7 +2,7 @@ function Checkout() {
   return (
     <main className="w-full h-auto mx-auto px-4 py-4">
       <div className="mb-8">
-        <h1 className="text-xl text-expresso font-bold font-lora leading-tight md:text-2xl">
+        <h1 className="text-2xl text-expresso font-bold font-lora leading-tight md:text-3xl">
           Checkout
         </h1>
         <form
@@ -21,7 +21,7 @@ function Checkout() {
               Full Name
             </label>
             <input
-              className="w-full px-4 py-2 my-2 border border-slate-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm transition-all"
+              className="w-full px-4 py-2 my-2 border border-slate-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-expresso focus:border-expresso text-sm transition-all"
               type="text"
               id="full-name"
               name="name"
@@ -38,7 +38,7 @@ function Checkout() {
               Email Address
             </label>
             <input
-              className="w-full px-4 py-2 my-2 border border-slate-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm transition-all"
+              className="w-full px-4 py-2 my-2 border border-slate-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-expresso focus:border-expresso text-sm transition-all"
               type="email"
               id="user-email"
               name="email"
@@ -59,7 +59,7 @@ function Checkout() {
               Address Line 1
             </label>
             <input
-              className="w-full px-4 py-2 my-2 border border-slate-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm transition-all"
+              className="w-full px-4 py-2 my-2 border border-slate-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-expresso focus:border-expresso text-sm transition-all"
               type="text"
               id="address"
               name="address"
@@ -75,7 +75,7 @@ function Checkout() {
               City
             </label>
             <input
-              className="w-full px-4 py-2 my-2 border border-slate-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm transition-all"
+              className="w-full px-4 py-2 my-2 border border-slate-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-expresso focus:border-expresso text-sm transition-all"
               type="text"
               id="city"
               name="city"
@@ -92,7 +92,7 @@ function Checkout() {
                 State
               </label>
               <input
-                className="w-full px-4 py-2 my-2 border border-slate-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm transition-all"
+                className="w-full px-4 py-2 my-2 border border-slate-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-expresso focus:border-expresso text-sm transition-all"
                 type="text"
                 id="state-name"
                 name="state"
@@ -108,7 +108,7 @@ function Checkout() {
                 ZIP Code
               </label>
               <input
-                className="w-full px-4 py-2 my-2 border border-slate-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm transition-all"
+                className="w-full px-4 py-2 my-2 border border-slate-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-expresso focus:border-expresso text-sm transition-all"
                 type="text"
                 id="zip-code"
                 name="zip"
