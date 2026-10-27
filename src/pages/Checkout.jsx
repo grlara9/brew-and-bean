@@ -1,6 +1,6 @@
 function Checkout() {
   return (
-    <main className="w-full h-[70vh] mx-auto px-4 py-4">
+    <main className="w-full h-auto mx-auto px-4 py-4">
       <div className="mb-8">
         <h1 className="text-4xl text-expresso font-bold font-lora leading-tight md:text-5xl">
           Checkout
@@ -118,6 +118,34 @@ function Checkout() {
                 placeholder="Zip Code"
                 required
               />
+            </div>
+          </div>
+          <div>
+            <h2 className="text-xl text-expresso font-bold font-lora leading-tight mt-4 md:text-5xl">
+              Payment Method
+            </h2>
+            <div>
+              <input
+                type="radio"
+                id="credit-debit"
+                name="credit-debit"
+                value="credit_card"
+              />
+              <label className="ml-2 text-sm" for="credit-debit">
+                Credit/ Debit Card
+              </label>
+            </div>
+
+            <div>
+              <input
+                type="radio"
+                id="apple"
+                name="apple_pay"
+                value="apple_value"
+              />
+              <label className="ml-2 text-sm" for="apple">
+                Apple Pay
+              </label>
             </div>
           </div>
           <button className="bg-expresso text-lg font-inter text-cream p-2 my-2 rounded-md w-full cursor-pointer transition-all duration-300 ease-out hover:bg-light-coffee hover:text-dark-brown md:text-2xl my-4">
