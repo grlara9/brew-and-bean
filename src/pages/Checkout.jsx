@@ -5,14 +5,14 @@ function Checkout() {
         <h1 className="text-4xl text-expresso font-bold font-lora leading-tight md:text-5xl">
           Checkout
         </h1>
-        <h2 className="text-xl text-expresso font-bold font-lora leading-tight md:text-5xl">
-          Contact Information
-        </h2>
         <form
           action="/submit-form"
           method="POST"
           className="overflow-x-auto bg-white shadow-sm"
         >
+          <h2 className="text-xl text-expresso font-bold font-lora leading-tight md:text-5xl">
+            Contact Information
+          </h2>
           <div>
             <label
               className="font-inter text-sm font-bold text-expresso"
@@ -46,14 +46,11 @@ function Checkout() {
               required
             />
           </div>
-        </form>
-      </div>
 
-      <div className="mb-8">
-        <h2 className="text-xl text-expresso font-bold font-lora leading-tight md:text-5xl">
-          Shipping Address
-        </h2>
-        <form>
+          <h2 className="text-xl text-expresso font-bold font-lora leading-tight md:text-5xl">
+            Shipping Address
+          </h2>
+
           <div>
             <label
               className="font-inter text-sm font-bold text-expresso"
