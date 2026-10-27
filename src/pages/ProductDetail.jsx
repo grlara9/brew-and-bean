@@ -8,11 +8,23 @@ function ProductDetail() {
 
   console.log("drink chosen " + drink);
   if (!drink) {
-    return <h2>Item not found in our menu!</h2>;
+    return (
+      <div className="h-[90vh] flex flex-col justify-center items-center py-4">
+        <h1 className="text-lg text-expresso font-bold font-inter leading-tight">
+          Item not found in our menu!
+        </h1>
+        <Link
+          to="/menu"
+          className="mt-5 inline-flex items-center gap-2 font-inter text-sm font-semibold text-expresso underline-offset-4 transition hover:text-caramel hover:underline"
+        >
+          ← Back to Menu
+        </Link>
+      </div>
+    );
   }
   return (
     <main className="w-full mx-auto px-4 pt-4">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="bg-cream my-4 grid grid-cols-1 md:grid-cols-2 gap-8">
         <img
           className="w-full max-w-full h-auto object-cover"
           src={drink.image}
