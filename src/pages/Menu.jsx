@@ -12,12 +12,15 @@ function Menu() {
 
   return (
     <>
-      <main className="p-4">
-        <div className="font-inter">
-          <h1 className="text-5xl text-expresso font-bold font-lora leading-tight">
+      <div className="bg-[url(./public/images/hero-section-image.jpeg)] bg-cover bg-no-repeat bg-bottom h-[50vh] flex justify-center items-center">
+        <div className="pl-8">
+          <h1 className="text-5xl text-white font-lora font-bold md:text-7xl">
             Our Menu
           </h1>
-
+        </div>
+      </div>
+      <main className="p-4">
+        <div className="font-inter">
           <nav className="flex flex-col items-start justify-start text-black text-lg md:flex-row md:items-center">
             <button
               className="pr-5 cursor-pointer hover:text-light-coffee"
