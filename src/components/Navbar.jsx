@@ -17,14 +17,22 @@ function Navigation() {
 
   return (
     <nav className="flex justify-around items-center h-[10vh] w-full bg-expresso font-lora text-cream relative">
-      <div className="font-bold text-xl font-cursive">
-        <a href="/home">Brew & Beans Coffee</a>
+      <div className="font-bold text-xl font-miniver">
+        <a href="/">Brew & Beans Coffee</a>
       </div>
-      <ul className="hidden flex gap-2 md:flex space-x-6">
-        <li className="hover:text-light-coffee">Home</li>
-        <li>Menu</li>
-        <li>About US</li>
-        <li>Cart</li>
+      <ul className="hidden flex gap-2 text-lg md:flex space-x-6">
+        <li className="cursor-pointer font-inter hover:text-light-coffee">
+          Home
+        </li>
+        <li className="cursor-pointer font-inter hover:text-light-coffee">
+          Menu
+        </li>
+        <li className="cursor-pointer font-inter hover:text-light-coffee">
+          About US
+        </li>
+        <li className="cursor-pointer font-inter hover:text-light-coffee">
+          Cart
+        </li>
       </ul>
       <div
         className="md:hidden relative z-[60] flex flex-col justify-between h-6 w-6 cursor-pointer"
@@ -62,10 +70,18 @@ function Navigation() {
         }`}
       >
         <ul className="flex flex-col gap-6 px-6 text-black">
-          <li className="cursor-pointer hover:text-light-coffee">Home</li>
-          <li className="cursor-pointer hover:text-light-coffee">Menu</li>
-          <li className="cursor-pointer hover:text-light-coffee">About Us</li>
-          <li className="cursor-pointer hover:text-light-coffee">Cart</li>
+          <li className="font-inter cursor-pointer hover:text-light-coffee">
+            Home
+          </li>
+          <li className="font-inter cursor-pointer hover:text-light-coffee">
+            Menu
+          </li>
+          <li className="font-inter cursor-pointer hover:text-light-coffee">
+            About Us
+          </li>
+          <li className="font-inter cursor-pointer hover:text-light-coffee">
+            Cart
+          </li>
         </ul>
       </div>
     </nav>
