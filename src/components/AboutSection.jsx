@@ -1,7 +1,7 @@
 function AboutSection() {
   return (
     <div className=" my-5 mx-6">
-      <div className="flex items-center gap-4 bg-cream p-4 rounded-xl shadow-md border border-stone-100">
+      <div className="grid grid-cols-1 gap-4 overflow-hidden shadow-lg bg-cream p-4 rounded-xl shadow-md border border-stone-100 md:grid-cols-2">
         <img
           className="h-124 w-124 rounded-lg flex-shrink-0"
           src="./public/images/about-section.jpg"
@@ -12,7 +12,7 @@ function AboutSection() {
           <h3 className="text-5xl text-expresso font-bold font-lora leading-tight">
             About Us
           </h3>
-          <p className="text-md font-inter mt-1 ">
+          <p className="text-md font-inter mt-1">
             Welcome to our coffee corner, where every cup tells a story of
             passion, precision, and exceptional flavor. We believe that a truly
             great cup of coffee begins long before the water hits the grounds,
