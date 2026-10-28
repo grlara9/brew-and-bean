@@ -3,8 +3,7 @@ import { Link } from "react-router";
 function FeaturedDrinks({ id, title, name, image, description, price }) {
   return (
     <div className="my-5 mx-6">
-      <div className="text-5xl text-dark-brown font-lora font-bold"></div>
-      <div className="bg-cream rounded-2xl shadow-md border border-stone-100 overflow-hidden max-w-[18rem] transition hover:shadow-lg">
+      <div className="bg-cream rounded-2xl shadow-md border border-stone-100 overflow-hidden w-full transition hover:shadow-lg">
         <div className="relative aspect-square w-full">
           <Link to={`/menu/${id}`}>
             <img
@@ -31,7 +30,6 @@ function FeaturedDrinks({ id, title, name, image, description, price }) {
           </div>
         </div>
       </div>
-      ;
     </div>
   );
 }
