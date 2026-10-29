@@ -20,14 +20,15 @@ function App() {
       if (existingItem) {
         return previousItems.map((cartItem) =>
           cartItem.id === item.id && cartItem.size === item.size
-            ? { ...cartItem, quantity: cartItem.quantity + 1 }
+            ? { ...cartItem, quantity: cartItem.quantity + item.quantity }
             : cartItem,
         );
       }
 
-      return [...previousItems, { ...item, quantity: 1 }];
+      return [...previousItems, { ...item, quantity: item.quantity }];
     });
   }
+  console.log("this is cart items selected ", cartItems);
   return (
     <>
       <Navigation />
