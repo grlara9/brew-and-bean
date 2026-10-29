@@ -1,7 +1,12 @@
+import { useState } from "react";
 import { useParams, Link } from "react-router";
 import menuItems from "../data/menu.js";
 
-function ProductDetail() {
+function ProductDetail(addToCart) {
+  const [count, setCount] = useState(0);
+
+  const [size, setSize] = useState("");
+
   const { productId } = useParams();
 
   const drink = menuItems.find((item) => item.id === Number(productId));
@@ -46,13 +51,22 @@ function ProductDetail() {
             Size
           </h2>
           <div>
-            <button className="bg-light-coffee font-inter text-dark-brown text-lg p-2 my-2 rounded-md cursor-pointer transition-all duration-300 ease-out hover:bg-expresso hover:text-cream">
+            <button
+              className="bg-light-coffee font-inter text-dark-brown text-lg p-2 my-2 rounded-md cursor-pointer transition-all duration-300 ease-out hover:bg-expresso hover:text-cream"
+              onClick={() => setSize("small")}
+            >
               Small
             </button>
-            <button className="bg-light-coffee font-inter text-dark-brown text-lg p-2 mt-2 ml-3 rounded-md cursor-pointer transition-all duration-300 ease-out hover:bg-expresso hover:text-cream">
+            <button
+              className="bg-light-coffee font-inter text-dark-brown text-lg p-2 mt-2 ml-3 rounded-md cursor-pointer transition-all duration-300 ease-out hover:bg-expresso hover:text-cream"
+              onClick={() => setSize("medium")}
+            >
               Medium
             </button>
-            <button className="bg-light-coffee font-inter text-dark-brown text-lg p-2 mt-2 ml-3 rounded-md cursor-pointer transition-all duration-300 ease-out hover:bg-expresso hover:text-cream">
+            <button
+              className="bg-light-coffee font-inter text-dark-brown text-lg p-2 mt-2 ml-3 rounded-md cursor-pointer transition-all duration-300 ease-out hover:bg-expresso hover:text-cream"
+              onClick={() => setSize("large")}
+            >
               Large
             </button>
           </div>
@@ -60,10 +74,21 @@ function ProductDetail() {
             Quantity
           </h2>
           <div className="flex my-2 md:text-2xl my-2">
-            <button className="border border-black px-2 rounded-l">-</button>
-            <p className="border border-black px-6">5</p>
-            <button className="border border-black px-2 rounded-r">+</button>
+            <button
+              className="border border-black px-2 rounded-l"
+              onClick={() => setCount(count - 1)}
+            >
+              -
+            </button>
+            <p className="border border-black px-6">{count}</p>
+            <button
+              className="border border-black px-2 rounded-r"
+              onClick={() => setCount(count + 1)}
+            >
+              +
+            </button>
           </div>
+
           <button className="bg-expresso text-lg font-inter text-cream p-2 my-2 rounded-md w-full cursor-pointer transition-all duration-300 ease-out hover:bg-light-coffee hover:text-dark-brown md:text-2xl my-4">
             Add to Cart
           </button>
