@@ -2,16 +2,33 @@ import { useState } from "react";
 import { useParams, Link } from "react-router";
 import menuItems from "../data/menu.js";
 
-function ProductDetail(addToCart) {
-  const [count, setCount] = useState(0);
+function ProductDetail({ addToCart }) {
+  const [count, setCount] = useState(1);
 
   const [size, setSize] = useState("");
 
   const { productId } = useParams();
+  console.log("this is the id chosen" + productId);
 
   const drink = menuItems.find((item) => item.id === Number(productId));
+  console.log("drink chosen ", drink);
+  function handleAddToCart() {
+    if (!size) {
+      alert("Please select a size.");
+      return;
+    }
+    const cartItemPayload = {
+      id: drink.id,
+      name: drink.name,
+      image: drink.image,
+      price: drink.price,
+      size: size,
+      quantity: count,
+    };
+    addToCart(cartItemPayload);
+    console.log("Payload", addToCart);
+  }
 
-  console.log("drink chosen " + drink);
   if (!drink) {
     return (
       <div className="h-[90vh] flex flex-col justify-center items-center py-4">
@@ -76,20 +93,27 @@ function ProductDetail(addToCart) {
           <div className="flex my-2 md:text-2xl my-2">
             <button
               className="border border-black px-2 rounded-l"
-              onClick={() => setCount(count - 1)}
+              onClick={() =>
+                setCount((previousCount) => Math.max(1, previousCount - 1))
+              }
             >
               -
             </button>
             <p className="border border-black px-6">{count}</p>
             <button
               className="border border-black px-2 rounded-r"
-              onClick={() => setCount(count + 1)}
+              onClick={() =>
+                setCount((previousCount) => Math.max(1, previousCount + 1))
+              }
             >
               +
             </button>
           </div>
 
-          <button className="bg-expresso text-lg font-inter text-cream p-2 my-2 rounded-md w-full cursor-pointer transition-all duration-300 ease-out hover:bg-light-coffee hover:text-dark-brown md:text-2xl my-4">
+          <button
+            className="bg-expresso text-lg font-inter text-cream p-2 my-2 rounded-md w-full cursor-pointer transition-all duration-300 ease-out hover:bg-light-coffee hover:text-dark-brown md:text-2xl my-4"
+            onClick={handleAddToCart}
+          >
             Add to Cart
           </button>
         </div>
