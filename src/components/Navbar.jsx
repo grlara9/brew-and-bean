@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useEffect } from "react";
+import { Link } from "react-router";
 
 function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
@@ -22,16 +23,16 @@ function Navigation() {
       </div>
       <ul className="hidden flex gap-2 text-lg md:flex space-x-6">
         <li className="cursor-pointer font-inter hover:text-light-coffee">
-          Home
+          <Link to="/">Home</Link>
         </li>
         <li className="cursor-pointer font-inter hover:text-light-coffee">
-          Menu
+          <Link to="/menu">Menu</Link>
         </li>
         <li className="cursor-pointer font-inter hover:text-light-coffee">
           About US
         </li>
         <li className="cursor-pointer font-inter hover:text-light-coffee">
-          Cart
+          <Link to="/Cart">Cart</Link>
         </li>
       </ul>
       <div
@@ -71,16 +72,16 @@ function Navigation() {
       >
         <ul className="flex flex-col gap-6 px-6 text-black">
           <li className="font-inter cursor-pointer hover:text-light-coffee">
-            Home
+            <Link to="/">Home</Link>
           </li>
           <li className="font-inter cursor-pointer hover:text-light-coffee">
-            Menu
+            <Link to="/menu">Menu</Link>
           </li>
           <li className="font-inter cursor-pointer hover:text-light-coffee">
             About Us
           </li>
           <li className="font-inter cursor-pointer hover:text-light-coffee">
-            Cart
+            <Link to="/cart">Cart</Link>
           </li>
         </ul>
       </div>
