@@ -28,6 +28,19 @@ function App() {
       return [...previousItems, { ...item, quantity: item.quantity }];
     });
   }
+
+  function updateQuantity() {}
+
+  function removeItem(itemId, itemSize) {
+    setCartItems((previousItems) => {
+      const filteredItems = previousItems.filter(
+        (cartItem) =>
+          cartItem.id !== cartItem.id || itemSize.size !== cartItem.size,
+      );
+      return filteredItems;
+    });
+  }
+
   console.log("this is cart items selected ", cartItems);
   return (
     <>
@@ -40,7 +53,16 @@ function App() {
           path="/menu/:productId"
           element={<ProductDetail addToCart={addToCart} />}
         />
-        <Route path="/cart" element={<Cart />} />
+        <Route
+          path="/cart"
+          element={
+            <Cart
+              cartItems={cartItems}
+              updateQuantity={updateQuantity}
+              removeItem={removeItem}
+            />
+          }
+        />
         <Route path="/checkout" element={<Checkout />} />
       </Routes>
 
