@@ -1,6 +1,10 @@
 import { useState } from "react";
 import { Link } from "react-router";
 function Cart({ cartItems, updateQuantity, removeItem }) {
+  const TotalAmount = cartItems.reduce((accumulator, item) => {
+    return accumulator + item.price * item.quantity;
+  }, 0);
+
   console.log("si se paso", cartItems, updateQuantity);
   if (cartItems.length === 0) {
     return <div className="p-8 text-center">Your cart is empty! 🛒</div>;
@@ -147,17 +151,21 @@ function Cart({ cartItems, updateQuantity, removeItem }) {
               <div className="mt-5 space-y-4 font-inter text-sm">
                 <div className="flex items-center justify-between gap-4">
                   <span className="text-stone-600">Subtotal</span>
-                  <span className="font-semibold text-expresso">$0.00</span>
+                  <span className="font-semibold text-expresso">
+                    ${TotalAmount.toFixed(2)}
+                  </span>
                 </div>
 
                 <div className="flex items-center justify-between gap-4">
                   <span className="text-stone-600">Tax</span>
-                  <span className="font-semibold text-expresso">$0.00</span>
+                  <span className="font-semibold text-expresso">$3.12</span>
                 </div>
 
                 <div className="flex items-center justify-between gap-4 border-t border-light-coffee pt-4">
                   <span className="font-bold text-expresso">Total</span>
-                  <span className="font-bold text-expresso">$0.00</span>
+                  <span className="font-bold text-expresso">
+                    ${(TotalAmount + 3.12).toFixed(2)}
+                  </span>
                 </div>
               </div>
 
