@@ -1,26 +1,12 @@
 import { useState } from "react";
 import { Link } from "react-router";
-function Cart() {
-  const [cartItems, setCartItems] = useState([
-    {
-      id: 1,
-      name: "Cappuccino",
-      image:
-        "https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?w=800&q=80",
-      price: 4.5,
-      quantity: 1,
-    },
-    {
-      id: 2,
-      name: "Blueberry Muffin",
-      image:
-        "https://images.unsplash.com/photo-1519915028121-7d3463d20b13?w=800&q=80",
-      price: 3.5,
-      quantity: 1,
-    },
-  ]);
+function Cart({ cartItems, updateQuantity, removeItem }) {
+  console.log("si se paso", cartItems, updateQuantity);
+  if (cartItems.length === 0) {
+    return <div className="p-8 text-center">Your cart is empty! 🛒</div>;
+  }
   return (
-    <main className="w-full h-[70vh] mx-auto px-4 py-4">
+    <main className="w-full h-full mx-auto px-4 py-4">
       <div className="w-full overflow-x-auto rounded-xl border border-light-coffee bg-white shadow-sm">
         <div className="mx-auto my-5 max-w-6xl">
           {/* Page Heading */}
@@ -87,6 +73,13 @@ function Cart() {
                             <button
                               type="button"
                               className="px-3 py-2 text-expresso transition hover:bg-cream"
+                              onClick={() =>
+                                updateQuantity(
+                                  item.id,
+                                  item.size,
+                                  item.quantity - 1,
+                                )
+                              }
                               aria-label={`Decrease ${item.name} quantity`}
                             >
                               −
@@ -99,6 +92,13 @@ function Cart() {
                             <button
                               type="button"
                               className="px-3 py-2 text-expresso transition hover:bg-cream"
+                              onClick={() =>
+                                updateQuantity(
+                                  item.id,
+                                  item.size,
+                                  item.quantity + 1,
+                                )
+                              }
                               aria-label={`Increase ${item.name} quantity`}
                             >
                               +
@@ -115,7 +115,7 @@ function Cart() {
 
                             <button
                               type="button"
-                              onClick={() => removeItem(item.id)}
+                              onClick={() => removeItem(item.id, item.size)}
                               aria-label={`Remove ${item.name}`}
                               className="rounded-md px-2 py-1 text-lg text-stone-400 transition hover:bg-red-50 hover:text-red-600"
                             >
