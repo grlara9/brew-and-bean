@@ -68,7 +68,7 @@ function Cart({ cartItems, updateQuantity, removeItem }) {
 
                         {/* Price */}
                         <td className="whitespace-nowrap px-5 py-5 font-inter text-sm text-stone-700">
-                          ${item.price.toFixed(2)}
+                          ${item.prices.toFixed(2)}
                         </td>
 
                         {/* Quantity Controls — layout only */}

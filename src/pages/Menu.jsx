@@ -108,7 +108,7 @@ function Menu() {
                 category={drink.category}
                 description={drink.description}
                 image={drink.image}
-                price={drink.price}
+                prices={drink.prices}
               />
             ))}
           </div>

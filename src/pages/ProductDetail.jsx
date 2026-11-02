@@ -21,7 +21,7 @@ function ProductDetail({ addToCart }) {
       id: drink.id,
       name: drink.name,
       image: drink.image,
-      price: drink.price,
+      price: drink.price[size],
       size: size,
       quantity: count,
     };
@@ -58,7 +58,7 @@ function ProductDetail({ addToCart }) {
             {drink.name}
           </h1>
           <span className="text-2xl text-expresso font-extrabold font-inter">
-            $ {drink.price.toFixed(2)}
+            {drink.prices[size]?.toFixed(2) || drink.prices.small.toFixed(2)}
           </span>
           <p className="text-md text-stone-500 mt-1 line-clamp-2">
             {drink.description}

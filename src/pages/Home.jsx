@@ -18,11 +18,12 @@ function Home() {
         {items.map((item) => (
           <FeaturedDrinks
             key={item.id}
+            id={item.id}
             name={item.name}
             image={item.image}
             category={item.category}
             description={item.description}
-            price={item.price}
+            prices={item.prices}
           />
         ))}
       </div>

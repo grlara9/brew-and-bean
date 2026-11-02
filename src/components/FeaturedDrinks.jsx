@@ -1,6 +1,6 @@
 import { Link } from "react-router";
 
-function FeaturedDrinks({ id, title, name, image, description, price }) {
+function FeaturedDrinks({ id, title, name, image, description, prices }) {
   return (
     <div className="my-5 mx-6">
       <div className="bg-cream rounded-2xl shadow-md border border-stone-100 overflow-hidden w-full transition hover:shadow-lg">
@@ -22,7 +22,7 @@ function FeaturedDrinks({ id, title, name, image, description, price }) {
           </div>
           <div className="flex justify-between items-center mt-4 pt-2 border-t border-stone-100/50">
             <span className="text-lg text-expresso font-extrabold font-inter">
-              {price.toFixed(2)}
+              {prices.small.toFixed(2)}
             </span>
             <button className="text-xs bg-expresso text-white px-3 py-1.5 rounded-lg font-medium hover:opacity-90 transition">
               Add
