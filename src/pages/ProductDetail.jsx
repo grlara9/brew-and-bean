@@ -6,7 +6,7 @@ function ProductDetail({ addToCart }) {
   const [count, setCount] = useState(1);
 
   const [size, setSize] = useState("");
-
+  console.log("size chosen", size);
   const { productId } = useParams();
   console.log("this is the id chosen" + productId);
 
@@ -69,19 +69,31 @@ function ProductDetail({ addToCart }) {
           </h2>
           <div>
             <button
-              className="bg-light-coffee font-inter text-dark-brown text-lg p-2 my-2 rounded-md cursor-pointer transition-all duration-300 ease-out hover:bg-expresso hover:text-cream"
+              className={`font-inter text-lg p-2 my-2 rounded-md cursor-pointer transition-all duration-300 ease-out ${
+                size === "small"
+                  ? "bg-expresso text-cream"
+                  : "bg-light-coffee text-dark-brown hover:bg-expresso hover:text-cream"
+              }`}
               onClick={() => setSize("small")}
             >
               Small
             </button>
             <button
-              className="bg-light-coffee font-inter text-dark-brown text-lg p-2 mt-2 ml-3 rounded-md cursor-pointer transition-all duration-300 ease-out hover:bg-expresso hover:text-cream"
+              className={`font-inter text-lg p-2 mt-2 ml-3 rounded-md cursor-pointer transition-all duration-300 ease-out  ${
+                size === "medium"
+                  ? "bg-expresso text-cream"
+                  : "bg-light-coffee text-dark-brown hover:bg-expresso hover:text-cream"
+              }`}
               onClick={() => setSize("medium")}
             >
               Medium
             </button>
             <button
-              className="bg-light-coffee font-inter text-dark-brown text-lg p-2 mt-2 ml-3 rounded-md cursor-pointer transition-all duration-300 ease-out hover:bg-expresso hover:text-cream"
+              className={`font-inter text-lg p-2 mt-2 ml-3 rounded-md cursor-pointer transition-all duration-300 ease-out  ${
+                size === "large"
+                  ? "bg-expresso text-cream"
+                  : "bg-light-coffee text-dark-brown hover:bg-expresso hover:text-cream"
+              }`}
               onClick={() => setSize("large")}
             >
               Large
