@@ -19,7 +19,10 @@ function Navigation() {
   return (
     <nav className="flex justify-around items-center h-[10vh] w-full bg-expresso font-lora text-cream relative">
       <div className="font-bold text-xl font-miniver">
-        <a href="/">Brew & Beans Coffee</a>
+        <a className="flex justify-center items-center gap-2" href="/">
+          <img className="w-14 h-14" src="../../public/images/logo.png" />
+          Brew & Beans Coffee
+        </a>
       </div>
       <ul className="hidden flex gap-2 text-lg md:flex space-x-6">
         <li className="cursor-pointer font-inter hover:text-light-coffee">
@@ -29,10 +32,7 @@ function Navigation() {
           <Link to="/menu">Menu</Link>
         </li>
         <li className="cursor-pointer font-inter hover:text-light-coffee">
-          About US
-        </li>
-        <li className="cursor-pointer font-inter hover:text-light-coffee">
-          <Link to="/Cart">Cart</Link>
+          <Link to="/Cart">Cart 🛒</Link>
         </li>
       </ul>
       <div
@@ -78,10 +78,7 @@ function Navigation() {
             <Link to="/menu">Menu</Link>
           </li>
           <li className="font-inter cursor-pointer hover:text-light-coffee">
-            About Us
-          </li>
-          <li className="font-inter cursor-pointer hover:text-light-coffee">
-            <Link to="/cart">Cart</Link>
+            <Link to="/cart">Cart 🛒</Link>
           </li>
         </ul>
       </div>
