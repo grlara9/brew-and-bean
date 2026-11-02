@@ -29,7 +29,15 @@ function App() {
     });
   }
 
-  function updateQuantity() {}
+  function updateQuantity(itemId, itemSize, newQuantity) {
+    setCartItems((previousItems) =>
+      previousItems.map((item) =>
+        item.id === itemId && item.size === itemSize
+          ? { ...item, quantity: Math.max(1, newQuantity) }
+          : item,
+      ),
+    );
+  }
 
   function removeItem(itemId, itemSize) {
     setCartItems((previousItems) => {
