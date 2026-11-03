@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router";
 function Cart({ cartItems, updateQuantity, removeItem }) {
   const TotalAmount = cartItems.reduce((accumulator, item) => {
-    return accumulator + item.price * item.quantity;
+    return accumulator + item.prices * item.quantity;
   }, 0);
 
   console.log("si se paso", cartItems, updateQuantity);
@@ -114,7 +114,7 @@ function Cart({ cartItems, updateQuantity, removeItem }) {
                         <td className="whitespace-nowrap px-5 py-5">
                           <div className="flex items-center gap-3">
                             <span className="font-inter text-sm font-bold text-expresso">
-                              ${(item.price * item.quantity).toFixed(2)}
+                              ${(item.prices * item.quantity).toFixed(2)}
                             </span>
 
                             <button

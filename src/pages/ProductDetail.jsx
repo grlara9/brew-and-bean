@@ -21,7 +21,7 @@ function ProductDetail({ addToCart }) {
       id: drink.id,
       name: drink.name,
       image: drink.image,
-      price: drink.price[size],
+      prices: drink.prices[size],
       size: size,
       quantity: count,
     };
