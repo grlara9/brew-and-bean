@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Routes, Route } from "react-router";
 import Navigation from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -9,7 +9,24 @@ import Cart from "./pages/Cart.jsx";
 import Checkout from "./pages/Checkout.jsx";
 
 function App() {
-  const [cartItems, setCartItems] = useState([]);
+  const [cartItems, setCartItems] = useState(() => {
+    try {
+      const savedCart = localStorage.getItem("brewBeanCart");
+
+      return savedCart ? JSON.parse(savedCart) : [];
+    } catch (error) {
+      console.error("Error loading cart:", error);
+      return [];
+    }
+  });
+
+  useEffect(() => {
+    try {
+      localStorage.setItem("brewBeanCart", JSON.stringify(cartItems));
+    } catch (error) {
+      console.error("Error saving cart:", error);
+    }
+  }, [cartItems]);
 
   function addToCart(item) {
     setCartItems((previousItems) => {
@@ -43,7 +60,7 @@ function App() {
     setCartItems((previousItems) => {
       const filteredItems = previousItems.filter(
         (cartItem) =>
-          cartItem.id !== cartItem.id || itemSize.size !== cartItem.size,
+          itemSize.id !== cartItem.id || itemSize.size !== cartItem.size,
       );
       return filteredItems;
     });
