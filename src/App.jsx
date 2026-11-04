@@ -28,6 +28,10 @@ function App() {
     }
   }, [cartItems]);
 
+  function clearCart() {
+    setCartItems([]);
+  }
+
   function addToCart(item) {
     setCartItems((previousItems) => {
       const existingItem = previousItems.find(
@@ -59,14 +63,12 @@ function App() {
   function removeItem(itemId, itemSize) {
     setCartItems((previousItems) => {
       const filteredItems = previousItems.filter(
-        (cartItem) =>
-          itemSize.id !== cartItem.id || itemSize.size !== cartItem.size,
+        (cartItem) => cartItem.id !== itemId || cartItem.size !== itemSize,
       );
       return filteredItems;
     });
   }
 
-  console.log("this is cart items selected ", cartItems);
   return (
     <>
       <Navigation />
@@ -88,7 +90,7 @@ function App() {
             />
           }
         />
-        <Route path="/checkout" element={<Checkout />} />
+        <Route path="/checkout" element={<Checkout clearCart={clearCart} />} />
       </Routes>
 
       <Footer />
