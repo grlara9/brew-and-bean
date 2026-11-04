@@ -6,12 +6,13 @@ function ProductDetail({ addToCart }) {
   const [count, setCount] = useState(1);
 
   const [size, setSize] = useState("");
-  console.log("size chosen", size);
+
+  const [itemAdded, setItemAdded] = useState(false);
+
   const { productId } = useParams();
-  console.log("this is the id chosen" + productId);
 
   const drink = menuItems.find((item) => item.id === Number(productId));
-  console.log("drink chosen ", drink);
+
   function handleAddToCart() {
     if (!size) {
       alert("Please select a size.");
@@ -25,8 +26,9 @@ function ProductDetail({ addToCart }) {
       size: size,
       quantity: count,
     };
+    setItemAdded(true);
     addToCart(cartItemPayload);
-    console.log("Payload", addToCart);
+    console.log("Payload", cartItemPayload);
   }
 
   if (!drink) {
@@ -46,6 +48,12 @@ function ProductDetail({ addToCart }) {
   }
   return (
     <main className="w-full mx-auto px-4 pt-4">
+      {itemAdded && (
+        <div className="bg-green-100 border border-green-400 text-green-800 p-4 rounded-lg my-4">
+          <h2 className="text-xl font-bold">Item Added Successfully!</h2>
+          <p>We appreciate your business!</p>
+        </div>
+      )}
       <div className="bg-cream my-4 grid grid-cols-1 md:grid-cols-2 gap-8">
         <img
           className="w-full max-w-full h-auto object-cover"
