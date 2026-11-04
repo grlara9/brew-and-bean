@@ -1,4 +1,3 @@
-import Hero from "../components/Hero";
 import MenuCategories from "../components/MenuCategories.jsx";
 import FeaturedDrinks from "../components/FeaturedDrinks.jsx";
 import menuItems from "../data/menu.js";
