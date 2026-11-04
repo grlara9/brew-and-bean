@@ -5,7 +5,6 @@ function Cart({ cartItems, updateQuantity, removeItem }) {
     return accumulator + item.prices * item.quantity;
   }, 0);
 
-  console.log("si se paso", cartItems, updateQuantity);
   if (cartItems.length === 0) {
     return <div className="p-8 text-center">Your cart is empty! 🛒</div>;
   }
@@ -170,7 +169,7 @@ function Cart({ cartItems, updateQuantity, removeItem }) {
               </div>
 
               <button className="bg-expresso text-lg font-inter text-cream p-2 my-2 rounded-md w-full cursor-pointer transition-all duration-300 ease-out hover:bg-light-coffee hover:text-dark-brown md:text-2xl my-4">
-                Proceed to Checkout
+                <Link to="/checkout">Proceed to Checkout</Link>
               </button>
 
               <p className="mt-3 text-center font-inter text-xs text-stone-500">
