@@ -1,16 +1,67 @@
-# React + Vite
+# ☕ Bean and brew – Coffee Shop
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive coffee shop web application built with React, JavaScript, and Tailwind CSS.
 
-Currently, two official plugins are available:
+Brew and Bean is a personal project designed to simulate an online coffee shop experience. Customers can explore the coffee menu, view product details, customize drink sizes, manage their shopping cart, and complete a checkout process.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+The project focuses on practicing modern frontend development, React fundamentals, and building interactive, responsive user interfaces.
 
-## React Compiler
+## Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Responsive navigation for mobile and desktop.
+- Homepage featuring popular coffee drinks.
+- Coffee menu with individual product pages.
+- Product size selection.
+- Add products to the shopping cart.
+- Increase and decrease product quantities.
+- Remove products from the shopping cart.
+- Cart persistence using Local Storage.
+- Checkout form with customer and shipping information.
+- Order confirmation message.
 
-## Expanding the ESLint configuration
+## 🛠️ Technologies Used
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- React
+- JavaScript (ES6+)
+- Tailwind CSS
+- React Router
+- HTML5
+- Vite
+- Local Storage
+
+## Installation
+
+1. Clone the repository:
+
+   git clone YOUR_REPOSITORY_URL
+
+2. Navigate to the project folder:
+
+   cd brew-bean
+
+3. Install dependencies:
+
+   npm install
+
+4. Start the development server:
+
+   npm run dev
+
+## 📚 What I Learned
+
+Building Brew Bean helped me strengthen my frontend development skills and gain practical experience with React.
+
+Some of the concepts I practiced include: - Creating reusable components and organizing a React application. - Managing application state using useState. - Using useEffect to synchronize data with Local Storage. - Passing props between parent and child components. - Implementing client-side routing with React Router. - Working with JavaScript array methods such as map(), filter(), find(), and reduce(). - Handling user interactions and form submissions. - Building responsive layouts using Tailwind CSS. - Managing shopping cart functionality and product quantities.
+
+## Future Improvements
+
+    - Deploy the application and provide a live demo.
+    - Integrate a backend to manage products and customer orders.
+    - Implement user authentication.
+    - Integrate a secure payment processing solution.
+    - Add order history and order tracking.
+    - Improve checkout form validation.
+
+## 👨‍💻 Author
+
+    Guillermo Lara
