@@ -1,13 +1,37 @@
+import { useState, useEffect } from "react";
 function Checkout() {
+  const [orderPlaced, setOrderPlaced] = useState(false);
+
+  useEffect(() => {
+    if (orderPlaced) {
+      const timer = setTimeout(() => {
+        setOrderPlaced(false);
+      }, 3000);
+
+      return () => clearTimeout(timer);
+    }
+  }, [orderPlaced]);
+
+  function handlePlaceOrder(e) {
+    e.preventDefault();
+    setOrderPlaced(true);
+    clearCart();
+  }
+
   return (
     <main className="w-full h-auto mx-auto px-4 py-4">
       <div className="mb-8">
         <h1 className="text-2xl text-expresso font-bold font-lora leading-tight md:text-3xl">
           Checkout
         </h1>
+        {orderPlaced && (
+          <div className="bg-green-100 border border-green-400 text-green-800 p-4 rounded-lg my-4">
+            <h2 className="text-xl font-bold">Order Placed Successfully!</h2>
+            <p>Thank you for your order. We appreciate your business!</p>
+          </div>
+        )}
         <form
-          action="/submit-form"
-          method="POST"
+          onSubmit={handlePlaceOrder}
           className="overflow-x-auto bg-white shadow-sm"
         >
           <h2 className="text-xl text-expresso font-bold font-lora leading-tight md:text-2xl">
@@ -145,7 +169,10 @@ function Checkout() {
               </label>
             </div>
           </div>
-          <button className="bg-expresso text-lg font-inter text-cream p-2 my-2 rounded-md w-full cursor-pointer transition-all duration-300 ease-out hover:bg-light-coffee hover:text-dark-brown md:text-2xl my-4">
+          <button
+            type="submit"
+            className="bg-expresso text-lg font-inter text-cream p-2 my-2 rounded-md w-full cursor-pointer transition-all duration-300 ease-out hover:bg-light-coffee hover:text-dark-brown md:text-2xl my-4"
+          >
             Place Order
           </button>
         </form>
