@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router";
 import menuItems from "../data/menu.js";
 
@@ -12,6 +12,16 @@ function ProductDetail({ addToCart }) {
   const { productId } = useParams();
 
   const drink = menuItems.find((item) => item.id === Number(productId));
+
+  useEffect(() => {
+    if (itemAdded) {
+      const timer = setTimeout(() => {
+        setItemAdded(false);
+      }, 3000);
+
+      return () => clearTimeout(timer);
+    }
+  }, [itemAdded]);
 
   function handleAddToCart() {
     if (!size) {
