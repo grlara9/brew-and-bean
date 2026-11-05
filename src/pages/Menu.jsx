@@ -12,7 +12,7 @@ function Menu() {
 
   return (
     <>
-      <div className="bg-[url(./public/images/hero-section-image.jpeg)] bg-cover bg-no-repeat bg-bottom h-[50vh] flex justify-center items-center">
+      <div className="bg-[url(/images/hero-section-image.jpeg)] bg-cover bg-no-repeat bg-bottom h-[50vh] flex justify-center items-center">
         <div className="pl-8">
           <h1 className="text-5xl text-white font-lora font-bold md:text-7xl">
             Our Menu

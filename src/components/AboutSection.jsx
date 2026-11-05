@@ -4,7 +4,7 @@ function AboutSection() {
       <div className="grid grid-cols-1 gap-4 overflow-hidden shadow-lg bg-cream p-4 rounded-xl shadow-md border border-stone-100 md:grid-cols-2">
         <img
           className="h-124 w-124 rounded-lg flex-shrink-0"
-          src="./public/images/about-section.jpg"
+          src="/images/about-section.jpg"
           alt="about me image"
         />
 
