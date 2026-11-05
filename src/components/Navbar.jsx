@@ -20,7 +20,7 @@ function Navigation() {
     <nav className="flex justify-around items-center h-[10vh] w-full bg-expresso font-lora text-cream relative">
       <div className="font-bold text-xl font-miniver">
         <a className="flex justify-center items-center gap-2" href="/">
-          <img className="w-14 h-14" src="../../public/images/logo.png" />
+          <img className="w-14 h-14" src="../../images/logo.png" />
           Brew & Beans Coffee
         </a>
       </div>
