@@ -10,7 +10,7 @@ const menuItems = [
       large: 5.25,
     },
     image:
-      "https://scontent.fcxl1-1.fna.fbcdn.net/v/t51.82787-15/808906270_18622483915039444_7668243408388840707_n.jpg?stp=dst-jpg_tt6&cstp=mx1350x1687&ctp=s1350x1687&_nc_cat=111&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=127cfc&_nc_ohc=tuaAZAurbRkQ7kNvwHbNa-s&_nc_oc=AdpPNV_RSGJXqIhNRdp6mvL-guUFr9rJl9uZxUpfs_XvBBGH0jpjmwQjLUVuObQ0hOU&_nc_zt=23&_nc_ht=scontent.fcxl1-1.fna&_nc_gid=6vM2EhT_rMaqooOnJK-Bjg&_nc_ss=7b289&oh=00_AQPlKx5RKEsg4VmP8sPk2bDYNsJsGitNyr1D2XxyDQG2Fg&oe=6AD2EE90",
+      "https://letscelebration.com/wp-content/uploads/2025/04/Classic-Espresso-Shot.jpg",
     description:
       "A full-bodied, concentrated shot of espresso with a rich crema and notes of dark chocolate.",
   },

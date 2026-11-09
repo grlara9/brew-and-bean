@@ -20,17 +20,17 @@ function App() {
     }
   });
 
-  useEffect(() => {
-    try {
-      localStorage.setItem("brewBeanCart", JSON.stringify(cartItems));
-    } catch (error) {
-      console.error("Error saving cart:", error);
-    }
-  }, [cartItems]);
-
   function clearCart() {
     setCartItems([]);
   }
+
+  useEffect(() => {
+    if (cartItems.length === 0) {
+      localStorage.removeItem("brewBeanCart");
+    } else {
+      localStorage.setItem("brewBeanCart", JSON.stringify(cartItems));
+    }
+  }, [cartItems]);
 
   function addToCart(item) {
     setCartItems((previousItems) => {

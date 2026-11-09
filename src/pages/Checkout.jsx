@@ -1,5 +1,18 @@
 import { useState, useEffect } from "react";
-function Checkout() {
+import { useNavigate } from "react-router";
+function Checkout({ clearCart }) {
+  const navigate = useNavigate();
+  const initialFormData = {
+    fullName: "",
+    email: "",
+    address: "",
+    city: "",
+    state: "",
+    zip: "",
+  };
+
+  const [formData, setFormData] = useState(initialFormData);
+  const [paymentMethod, setPaymentMethod] = useState("");
   const [orderPlaced, setOrderPlaced] = useState(false);
 
   useEffect(() => {
@@ -14,8 +27,17 @@ function Checkout() {
 
   function handlePlaceOrder(e) {
     e.preventDefault();
+
+    //clear checkout form
     setOrderPlaced(true);
+    setFormData(initialFormData);
+    setPaymentMethod("");
+    //clear cart
     clearCart();
+    //navigate tu menu
+    setTimeout(() => {
+      navigate("/menu");
+    }, 3000);
   }
 
   return (
@@ -50,6 +72,10 @@ function Checkout() {
               id="full-name"
               name="name"
               placeholder="Name"
+              value={formData.fullName}
+              onChange={(e) =>
+                setFormData({ ...formData, fullName: e.target.value })
+              }
               required
             />
           </div>
@@ -67,6 +93,10 @@ function Checkout() {
               id="user-email"
               name="email"
               placeholder="Youremail@example.com"
+              value={formData.email}
+              onChange={(e) =>
+                setFormData({ ...formData, email: e.target.value })
+              }
               required
             />
           </div>
@@ -88,6 +118,10 @@ function Checkout() {
               id="address"
               name="address"
               placeholder="123 Main St"
+              value={formData.address}
+              onChange={(e) =>
+                setFormData({ ...formData, address: e.target.value })
+              }
               required
             />
           </div>
@@ -104,6 +138,10 @@ function Checkout() {
               id="city"
               name="city"
               placeholder="City"
+              value={formData.city}
+              onChange={(e) =>
+                setFormData({ ...formData, city: e.target.value })
+              }
               required
             />
           </div>
@@ -121,6 +159,10 @@ function Checkout() {
                 id="state-name"
                 name="state"
                 placeholder="State"
+                value={formData.state}
+                onChange={(e) =>
+                  setFormData({ ...formData, state: e.target.value })
+                }
                 required
               />
             </div>
@@ -137,6 +179,10 @@ function Checkout() {
                 id="zip-code"
                 name="zip"
                 placeholder="Zip Code"
+                value={formData.zip}
+                onChange={(e) =>
+                  setFormData({ ...formData, zip: e.target.value })
+                }
                 required
               />
             </div>
@@ -151,6 +197,8 @@ function Checkout() {
                 id="credit-debit"
                 name="credit-debit"
                 value="credit_card"
+                checked={paymentMethod === "credit_card"}
+                onChange={(e) => setPaymentMethod(e.target.value)}
               />
               <label className="ml-2 text-sm" htmlFor="credit-debit">
                 Credit/ Debit Card
@@ -163,6 +211,8 @@ function Checkout() {
                 id="apple"
                 name="apple_pay"
                 value="apple_value"
+                checked={paymentMethod === "apple_pay"}
+                onChange={(e) => setPaymentMethod(e.target.value)}
               />
               <label className="ml-2 text-sm" htmlFor="apple">
                 Apple Pay
